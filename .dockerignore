@@ -1,0 +1,40 @@
+# dependencies
+node_modules
+**/node_modules
+.pnpm-store
+
+# next.js
+.next
+**/.next
+
+# turbo
+.turbo
+**/.turbo
+
+# builds
+dist
+**/dist
+build
+**/build
+coverage
+**/coverage
+
+# env
+**/.env
+*.env
+**/*.env
+
+# git
+.git
+**/.git
+.gitignore
+**/.gitignore
+
+# misc
+*.log
+**/*.log
+.DS_Store
+Dockerfile
+docker-compose.yml
+.tinyb
+**/.tinyb

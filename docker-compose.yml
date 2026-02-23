@@ -1,0 +1,15 @@
+services:
+  web:
+    container_name: kpistats
+    build:
+      context: .
+      secrets:
+        - web_env
+    ports:
+      - "8888:8888"
+    env_file:
+      - ./apps/web/.env
+
+secrets:
+  web_env:
+    file: ./apps/web/.env

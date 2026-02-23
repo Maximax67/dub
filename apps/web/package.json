@@ -4,7 +4,7 @@
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "concurrently --kill-others \"pnpm prisma:generate && next dev --turbopack --port 8888\" \"pnpm prisma:generate && pnpm prisma:studio --browser none\"",
-    "build": "pnpm prisma:generate && next build",
+    "build": "pnpm prisma:generate && cross-env NODE_OPTIONS=--max-old-space-size=12288 next build",
     "lint": "next lint",
     "start": "next start",
     "script": "tsx ./scripts/run.ts",
@@ -146,6 +146,7 @@
     "@types/react-highlight-words": "^0.16.4",
     "@types/sanitize-html": "^2.16.0",
     "autoprefixer": "^10.4.16",
+    "cross-env": "^10.1.0",
     "dotenv-flow": "^4.1.0",
     "dotenv-flow-cli": "^1.1.1",
     "papaparse": "^5.4.1",

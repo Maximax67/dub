@@ -6,7 +6,6 @@ RUN apk add --no-cache libc6-compat
 RUN npm install -g pnpm
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
-
 COPY packages ./packages
 COPY apps ./apps
 

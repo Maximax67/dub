@@ -9,7 +9,7 @@ import { queueStripePayouts } from "./queue-stripe-payouts";
 import { sendPaypalPayouts } from "./send-paypal-payouts";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 600; // This function can run for a maximum of 10 minutes
+export const maxDuration = 30; // This function can run for a maximum of 30 seconds
 
 const payloadSchema = z.object({
   invoiceId: z.string(),

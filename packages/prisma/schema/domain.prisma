@@ -46,10 +46,10 @@ model RegisteredDomain {
 }
 
 model DefaultDomains {
-  id                                         String  @id @default(cuid())
-  dyqigimgkrcteucentral1clawcloudruncom      Boolean @default(true)
-  projectId                                  String  @unique
-  project                                    Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  id                 String  @id @default(cuid())
+  kpistatsqzzio      Boolean @default(true)
+  projectId          String  @unique
+  project            Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }
 
 enum EmailDomainStatus {

@@ -43,17 +43,17 @@ export async function processLink<T extends Record<string, any>>({
   skipProgramChecks?: boolean;
 }): Promise<
   | {
-      link: NewLinkProps & T;
-      error: string;
-      code?: string;
-      status?: number;
-    }
+    link: NewLinkProps & T;
+    error: string;
+    code?: string;
+    status?: number;
+  }
   | {
-      link: ProcessedLinkProps & T;
-      error: null;
-      code?: never;
-      status?: never;
-    }
+    link: ProcessedLinkProps & T;
+    error: null;
+    code?: never;
+    status?: never;
+  }
 > {
   let {
     domain,
@@ -153,8 +153,8 @@ export async function processLink<T extends Record<string, any>>({
 
   const domains = workspace
     ? await prisma.domain.findMany({
-        where: { projectId: workspace.id },
-      })
+      where: { projectId: workspace.id },
+    })
     : [];
 
   // if domain is not defined, set it to the workspace's primary domain
@@ -203,6 +203,7 @@ export async function processLink<T extends Record<string, any>>({
     if (
       key !== "_root" &&
       allowedHostnames &&
+      allowedHostnames.length &&
       !allowedHostnames.includes(urlDomain) &&
       !allowedHostnames.includes(apexDomain)
     ) {
@@ -427,12 +428,12 @@ export async function processLink<T extends Record<string, any>>({
           defaultFolderId: true,
           ...(!partnerId && tenantId
             ? {
-                partners: {
-                  where: {
-                    tenantId,
-                  },
+              partners: {
+                where: {
+                  tenantId,
                 },
-              }
+              },
+            }
             : {}),
         },
       });

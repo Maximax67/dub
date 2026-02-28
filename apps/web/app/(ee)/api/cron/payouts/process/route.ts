@@ -9,7 +9,7 @@ import { processPayouts } from "./process-payouts";
 import { splitPayouts } from "./split-payouts";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 600; // This function can run for a maximum of 10 minutes
+export const maxDuration = 30; // This function can run for a maximum of 30 seconds
 
 const processPayoutsCronSchema = z.object({
   workspaceId: z.string(),
